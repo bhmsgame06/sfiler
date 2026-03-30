@@ -12,6 +12,8 @@ SRM_OBJS := $(SRC_DIR)/srm/main.o
 OBJS := $(SRC_DIR)/serial.o \
 		$(SRC_DIR)/progress.o
 
+PREFIX := /usr/local
+
 all: spush spull srm
 
 spush: $(SPUSH_OBJS) $(OBJS)
@@ -30,7 +32,7 @@ srm: $(SRM_OBJS) $(OBJS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 install:
-	install $(BUILD_DIR)/spush $(BUILD_DIR)/spull $(BUILD_DIR)/srm /usr/local/bin
+	install $(BUILD_DIR)/spush $(BUILD_DIR)/spull $(BUILD_DIR)/srm $(PREFIX)/bin
 
 clean:
 	rm -f $(SPUSH_OBJS) $(SPULL_OBJS) $(SRM_OBJS) $(OBJS)
