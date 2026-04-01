@@ -2,7 +2,7 @@ SRC_DIR := src
 BUILD_DIR := bin
 LIBS := -lz
 CC := cc
-CFLAGS := -O2
+CFLAGS := -O2 -g
 LD := cc
 LDFLAGS := $(LIBS)
 
